@@ -1,4 +1,4 @@
-# Characterizing and Optimizing EDA Flows for the Cloud <img align="right" width="10%" src="doc/img/eda-on-cloud.jpg">
+# Characterizing and Optimizing EDA Flows for the Cloud <img align="right" width="30%" src="doc/img/eda-on-cloud.jpg">
 
 ## Abstract
 
