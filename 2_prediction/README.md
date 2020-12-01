@@ -50,7 +50,7 @@ save_graphs("./design.dgl", [G], {})
 
 ### Netlist Designs
 
-:note: NOTE :note:
+NOTE :exclamation: 
 
 > Parsing netlists depends on the python package `opendbpy`. This package is only compiled for CentOS 7.
 
