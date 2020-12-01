@@ -1,0 +1,53 @@
+Performance counter stats for 'CPU(s) 52,55':
+
+   732,285,079,348      instructions              #    1.55  insn per cycle           (17.24%)
+   473,253,915,247      cpu-cycles                                                    (17.24%)
+   378,609,251,310      ref-cycles                                                    (20.69%)
+    15,787,353,766      bus-cycles                                                    (20.69%)
+     6,058,211,791      cache-references                                              (20.69%)
+       706,095,487      cache-misses              #   11.655 % of all cache refs      (20.69%)
+   166,570,702,539      branches                                                      (17.24%)
+       964,548,126      branch-misses             #    0.58% of all branches          (13.79%)
+   232,067,210,317      L1-dcache-loads                                               (13.79%)
+     5,867,556,024      L1-dcache-load-misses     #    2.53% of all L1-dcache hits    (13.79%)
+   107,866,801,293      L1-dcache-stores                                              (13.79%)
+     4,070,186,343      L1-icache-load-misses                                         (13.79%)
+     1,504,238,386      LLC-loads                                                     (13.79%)
+       203,881,075      LLC-load-misses           #   13.55% of all LL-cache hits     (13.79%)
+       316,399,766      LLC-stores                                                    (6.90%)
+        18,957,374      LLC-store-misses                                              (6.90%)
+       160,278,557      dTLB-load-misses                                              (10.35%)
+        17,177,785      dTLB-store-misses                                             (13.79%)
+        64,044,380      iTLB-load-misses                                              (13.79%)
+   166,875,755,475      branch-loads                                                  (13.79%)
+       958,663,203      branch-load-misses                                            (13.79%)
+                 0      block:block_touch_buffer                                    
+           135,815      block:block_dirty_buffer                                    
+                 0      block:block_rq_abort                                        
+                43      block:block_rq_requeue                                      
+               129      block:block_rq_complete                                     
+               172      block:block_rq_insert                                       
+               172      block:block_rq_issue                                        
+                 0      block:block_bio_bounce                                      
+               129      block:block_bio_complete                                    
+                 0      block:block_bio_backmerge                                   
+                 0      block:block_bio_frontmerge                                   
+               258      block:block_bio_queue                                       
+               129      block:block_getrq                                           
+                 0      block:block_sleeprq                                         
+                 0      block:block_plug                                            
+                 0      block:block_unplug                                          
+                 0      block:block_split                                           
+               258      block:block_bio_remap                                       
+                 0      block:block_rq_remap                                        
+        93,355,015      fp_arith_inst_retired.128b_packed_double                                     (13.79%)
+       185,605,153      fp_arith_inst_retired.128b_packed_single                                     (13.79%)
+       400,244,610      fp_arith_inst_retired.packed                                     (13.79%)
+     3,453,865,440      fp_arith_inst_retired.single                                     (13.79%)
+     2,089,956,645      fp_arith_inst_retired.double                                     (13.79%)
+     5,077,310,868      fp_arith_inst_retired.scalar                                     (13.79%)
+     1,891,517,200      fp_arith_inst_retired.scalar_double                                     (13.79%)
+     3,153,519,026      fp_arith_inst_retired.scalar_single                                     (13.79%)
+
+     116.870094744 seconds time elapsed
+

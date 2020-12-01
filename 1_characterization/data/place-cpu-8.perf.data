@@ -1,0 +1,53 @@
+Performance counter stats for 'CPU(s) 48-55' (3 runs):
+
+ 5,726,205,473,153      instructions              #    1.58  insn per cycle           ( +-  0.17% )  (17.24%)
+ 3,616,824,657,638      cpu-cycles                                                    ( +-  0.01% )  (17.24%)
+ 2,923,434,819,667      ref-cycles                                                    ( +-  0.05% )  (20.69%)
+   121,928,445,320      bus-cycles                                                    ( +-  0.05% )  (20.69%)
+    55,299,043,588      cache-references                                              ( +-  0.11% )  (20.69%)
+    16,743,938,928      cache-misses              #   30.279 % of all cache refs      ( +-  0.15% )  (20.69%)
+ 1,023,713,757,956      branches                                                      ( +-  0.07% )  (17.24%)
+     5,641,947,915      branch-misses             #    0.55% of all branches          ( +-  0.08% )  (13.79%)
+ 1,769,079,051,193      L1-dcache-loads                                               ( +-  0.11% )  (13.79%)
+    54,769,493,922      L1-dcache-load-misses     #    3.10% of all L1-dcache hits    ( +-  0.22% )  (13.79%)
+   722,539,538,942      L1-dcache-stores                                              ( +-  0.12% )  (13.79%)
+    16,218,181,925      L1-icache-load-misses                                         ( +-  0.00% )  (13.79%)
+    12,523,412,908      LLC-loads                                                     ( +-  0.32% )  (13.79%)
+     3,504,752,239      LLC-load-misses           #   27.99% of all LL-cache hits     ( +-  0.14% )  (13.79%)
+     4,051,940,601      LLC-stores                                                    ( +-  0.42% )  (6.90%)
+     1,248,764,806      LLC-store-misses                                              ( +-  1.00% )  (6.90%)
+     1,251,581,556      dTLB-load-misses                                              ( +-  0.15% )  (10.34%)
+       220,922,297      dTLB-store-misses                                             ( +-  0.40% )  (13.79%)
+       174,619,735      iTLB-load-misses                                              ( +-  5.02% )  (13.79%)
+ 1,026,003,527,983      branch-loads                                                  ( +-  0.14% )  (13.79%)
+     5,661,981,157      branch-load-misses                                            ( +-  0.22% )  (13.79%)
+                 0      block:block_touch_buffer                                    
+           204,511      block:block_dirty_buffer                                      ( +-  0.00% )
+                 0      block:block_rq_abort                                        
+               368      block:block_rq_requeue                                        ( +- 12.42% )
+               163      block:block_rq_complete                                       ( +- 10.01% )
+               531      block:block_rq_insert                                         ( +- 11.68% )
+               529      block:block_rq_issue                                          ( +- 11.40% )
+                 0      block:block_bio_bounce                                      
+               163      block:block_bio_complete                                      ( +- 10.01% )
+                 0      block:block_bio_backmerge                                   
+                 0      block:block_bio_frontmerge                                   
+               327      block:block_bio_queue                                         ( +- 10.19% )
+               163      block:block_getrq                                             ( +- 10.01% )
+                 0      block:block_sleeprq                                           ( +-100.00% )
+                 0      block:block_plug                                            
+                 0      block:block_unplug                                          
+                 0      block:block_split                                           
+               327      block:block_bio_remap                                         ( +- 10.19% )
+                 0      block:block_rq_remap                                        
+   118,785,418,192      fp_arith_inst_retired.128b_packed_double                                     ( +-  0.29% )  (13.79%)
+     3,489,578,607      fp_arith_inst_retired.128b_packed_single                                     ( +-  0.59% )  (13.79%)
+   122,090,173,957      fp_arith_inst_retired.packed                                     ( +-  1.19% )  (13.79%)
+     7,067,491,772      fp_arith_inst_retired.single                                     ( +-  0.71% )  (13.79%)
+   533,954,142,430      fp_arith_inst_retired.double                                     ( +-  0.46% )  (13.80%)
+   419,861,764,773      fp_arith_inst_retired.scalar                                     ( +-  0.25% )  (13.79%)
+   417,279,486,254      fp_arith_inst_retired.scalar_double                                     ( +-  0.20% )  (13.79%)
+     3,550,989,006      fp_arith_inst_retired.scalar_single                                     ( +-  0.67% )  (13.79%)
+
+           480.796 +- 0.574 seconds time elapsed  ( +-  0.12% )
+

@@ -7,8 +7,10 @@ In this part, we characterize the performance of the different stages of an EDA 
 Execute the scripts on a Linux system where `perf` tool is installed. For example:
 
 ```Shell
-./1_synth.sh
+./1_synth.sh test-run 4 0-3
 ```
+where `test-run` is an arbitrary ID (used to uniquely identify this run), `4` represents the number of CPUs and `0-3` represents the CPU IDs to pin this process on. CPU pinning is important because otherwise, the operating system will keep floating the process between cores depending on the least busy core.
+
 
 ## Limiting Resources with Control Groups 
 
@@ -20,10 +22,13 @@ In order to simulate a cloud environment where resources are virtualized and con
 
 ## Output
 
-The output of the performance counters is reported in a file named `$STAGE-cpu-$CPU_COUNT.perf.data`.
-You may use your preferred scripting language to parse these files.
+The output of the performance counters is reported in a file named `$RUN_ID-$STAGE-cpu-$CPU_COUNT.perf.data`.
+We provide data for the Sparc Core design in the [data](./data) folder.
+Use your favorite scripting language to process and aggregate the data.
+
+For example, to parse the file into a `.csv` format, you might use: `awk -F ' ' '{ print $2", " $1 }' synth-cpu-1.perf.data | tail -n+3 > data.csv`.
 
 ## Results
 
-Please, refer to the paper cited in the [README](../README.md) for our crunched results.
+Please, refer to the paper cited in the [README](../README.md) for our crunched results. 
 

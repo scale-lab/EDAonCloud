@@ -18,6 +18,7 @@ RUN_ID=$1
 CPU_COUNT=$2
 CPUS=$3
 
+# Synthesis script (depends on the tool used)
 TCL_FILE=1_synth.tcl
 
 # Performance Counters
@@ -35,4 +36,4 @@ PC=$PC",fp_arith_inst_retired.256b_packed_double,fp_arith_inst_retired.256b_pack
 
 # synthesis
 run_command=''  # put tool command here
-perf stat -r 3 -o synth-$RUN_ID.perf.data -e $PC -C $CPUS taskset -c $CPUS $run_command
+perf stat -r 3 -o $RUN_ID-synth-$CPU_COUNT.perf.data -e $PC -C $CPUS taskset -c $CPUS $run_command

@@ -18,6 +18,7 @@ RUN_ID=$1
 CPU_COUNT=$2
 CPUS=$3
 
+# Placement script (depends on the tool used)
 TCL_FILE=2_place.tcl
 
 # Performance Counters
@@ -35,4 +36,4 @@ PC=$PC",fp_arith_inst_retired.256b_packed_double,fp_arith_inst_retired.256b_pack
 
 # placement
 run_command=''  # put tool command here
-perf stat -r 3 -o place-$RUN_ID.perf.data -e $PC -C $CPUS taskset -c $CPUS $run_command
+perf stat -r 3 -o $RUN_ID-place-$CPU_COUNT.perf.data -e $PC -C $CPUS taskset -c $CPUS $run_command

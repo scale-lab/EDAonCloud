@@ -1,0 +1,37 @@
+Performance counter stats for 'CPU(s) 41':
+
+   844,076,433,158      instructions              #    1.63  insn per cycle           (1.44%)
+   518,040,267,372      cpu-cycles                                                    (1.92%)
+   428,175,501,996      ref-cycles                                                    (2.41%)
+    17,850,722,083      bus-cycles                                                    (2.89%)
+     6,708,841,906      cache-references                                              (2.89%)
+       881,466,923      cache-misses              #   13.139 % of all cache refs      (2.89%)
+   194,583,981,791      branches                                                      (2.41%)
+     1,794,521,276      branch-misses             #    0.92% of all branches          (1.92%)
+   254,297,047,011      L1-dcache-loads                                               (1.92%)
+     6,256,235,583      L1-dcache-load-misses     #    2.46% of all L1-dcache hits    (1.92%)
+   114,805,159,864      L1-dcache-stores                                              (1.92%)
+     3,012,692,584      L1-icache-load-misses                                         (1.92%)
+     1,921,400,587      LLC-loads                                                     (1.92%)
+       177,304,608      LLC-load-misses           #    9.23% of all LL-cache hits     (1.92%)
+       387,992,159      LLC-stores                                                    (0.96%)
+        18,838,870      LLC-store-misses                                              (0.96%)
+   253,101,640,608      dTLB-loads                                                    (1.44%)
+       177,565,075      dTLB-load-misses          #    0.07% of all dTLB cache hits   (1.92%)
+   114,011,776,635      dTLB-stores                                                   (1.92%)
+        24,011,981      dTLB-store-misses                                             (1.92%)
+       633,204,746      iTLB-loads                                                    (1.92%)
+        81,568,078      iTLB-load-misses          #   12.88% of all iTLB cache hits   (1.92%)
+   191,818,172,914      branch-loads                                                  (1.92%)
+     1,751,659,506      branch-load-misses                                            (1.92%)
+               129      block:block_rq_issue                                        
+                 0      block:block_rq_complete                                     
+     1,169,476,518      fp_arith_inst_retired.scalar_double                                     (1.92%)
+     1,975,239,959      fp_arith_inst_retired.scalar_single                                     (1.92%)
+       107,207,170      fp_arith_inst_retired.128b_packed_double                                     (1.92%)
+        56,788,481      fp_arith_inst_retired.128b_packed_single                                     (1.92%)
+        20,521,990      fp_arith_inst_retired.256b_packed_double                                     (1.92%)
+                 0      fp_arith_inst_retired.256b_packed_single                                     (1.92%)
+
+     183.138123752 seconds time elapsed
+
