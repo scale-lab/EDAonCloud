@@ -1,7 +1,16 @@
+import argparse
+
 from knapsack_solver import mc_knapsack
 
 if __name__ == "__main__":
-    with open('example_data.csv', 'r') as f:
+    parser = argparse.ArgumentParser(add_help=True)
+    parser.add_argument("budget", type=int, \
+        help="Total budget for the computation")
+    parser.add_argument("-data", type=str, required=False, default='example_data.csv', \
+        help="File that contains the input data")
+    args = parser.parse_args()
+    
+    with open(args.data, 'r') as f:
         classes = list(map(int, f.readline().split(',')[1:]))
         runtime = list(map(int, map(float, f.readline().split(',')[1:])))
         cost_per_hour = list(map(float, f.readline().split(',')[1:]))
@@ -10,25 +19,8 @@ if __name__ == "__main__":
         for i in range(len(runtime)):
             cost.append(runtime[i] * (cost_per_hour[i] / 60.0 / 60.0))
             values.append(1.0 / (runtime[i] * cost_per_hour[i] / 60.0 / 60.0))
-
-        # sparc_core
-        # budget = 5645 # 3, 3, 3, 3 = 128.88
-        # budget = 1000  # no solution
-        # budget = 6000 # -> 2, 2, 3, 1 = 267.02
-        # budget = 10000  # -> 1, 0, 2, 1 = 274.61
         
-        # coyote
-        # budget = 5983 # 3, 3, 3, 3 = 160.09
-        # budget = 1000 # no solution
-        # budget = 8000
-
-        # ariane
-        # budget = 3500
-
-        # swerv
-        budget = 2100
-        
-        _, sol = mc_knapsack(budget, runtime, values, classes)
+        _, sol = mc_knapsack(args.budget, runtime, values, classes)
         if sol:
             total_runtime = 0
             total_cost = 0
