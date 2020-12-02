@@ -13,9 +13,10 @@ import pandas as pd
 import numpy as np
 
 from torch.utils.data import DataLoader
-
 from dataset import DesignDataset
+from model import MetricPredictor
 from netlist import read_netlist
+from log import get_logger
 
 
 # setup device
@@ -78,8 +79,8 @@ if __name__ == "__main__":
     test_dataset = DesignDataset(Gs, 'data/test.csv')
     
     # define model
-    model = Predictor(2, args.gcn_hidden_dim, args.netlist_embedding_size, \
-                      args.predictor_hidden_dim, 1).to(device)
+    model = MetricPredictor(2, args.gcn_hidden_dim, args.netlist_embedding_size, \
+                      args.predictor_hidden_dim).to(device)
     loss_func = nn.MSELoss()
 
     _min = 1.0
@@ -93,15 +94,15 @@ if __name__ == "__main__":
         for epoch in range(epochs):
             epoch_loss = 0
             dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=batch_size, collate_fn=collate)
-            for i_batch, (_, G, P, M) in enumerate(dataloader):
-                _, prediction = model(G, P.to(device))
+            for i_batch, (_, G, M) in enumerate(dataloader):
+                _, prediction = model(G)
                 loss = loss_func(prediction.to(device), M.to(device))
                 optimizer.zero_grad()
                 loss.backward()
                 optimizer.step()
                 epoch_loss += loss.detach().item()
 
-                if i_batch % 100 == 0:
+                if i_batch % 10 == 0:
                     logger.info('Epoch: {}, iteration: {}, MSE: {:.4f}'.format(epoch, i_batch, epoch_loss / (i_batch+1)))
                 
             i_batch += 1
@@ -129,9 +130,9 @@ if __name__ == "__main__":
     embeddings = []
     model.eval()
     dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=True, num_workers=batch_size, collate_fn=collate)
-    for i_batch, (ID, G, P, M) in enumerate(dataloader):
+    for i_batch, (ID, G, M) in enumerate(dataloader):
         print(i_batch)
-        graph_embeeding, prediction = model(G, P.to(device))
+        graph_embeeding, prediction = model(G)
         loss = loss_func(prediction.to(device), M.to(device))
         losses.append(loss.detach().item())
 

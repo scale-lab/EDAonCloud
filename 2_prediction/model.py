@@ -54,7 +54,7 @@ class GCN(nn.Module):
 
 class MetricPredictor(nn.Module):
     def __init__(self, netlist_in_dim=2, gcn_hidden_dim=128, netlist_embedding_size=256, predictor_hidden_dim=128):
-        super(Predictor, self).__init__()
+        super(MetricPredictor, self).__init__()
         self.gcn = GCN(netlist_in_dim, gcn_hidden_dim, netlist_embedding_size)
         self.predictor_fc1 = nn.Linear(netlist_embedding_size, predictor_hidden_dim, bias=True)
         self.predictor_fc2 = nn.Linear(predictor_hidden_dim, 1, bias=True)
