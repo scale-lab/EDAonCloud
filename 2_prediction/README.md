@@ -23,7 +23,7 @@ pip install -r requirements
 The first step is that to parse an input design as graph representation suitable for the `dgl` library.
 There are two different graphs that we operate on: a desing in RTL, and a design in netlist format. 
 
-We provide sample data in the [data](./data) folder. 
+We provide sample data in the [data](./data) folder. Note that the data is **unnormalized**.
 You may skip this section if you just want to try out our model.
 However, if you want to use it on your own dataset, we provide the details below.
 
