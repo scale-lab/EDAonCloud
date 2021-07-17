@@ -18,7 +18,7 @@ if __name__ == "__main__":
         values = []
         for i in range(len(runtime)):
             cost.append(runtime[i] * (cost_per_hour[i] / 60.0 / 60.0))
-            values.append(1.0 / (runtime[i] * cost_per_hour[i] / 60.0 / 60.0))
+            values.append((runtime[i] * cost_per_hour[i] / 60.0 / 60.0))
         
         _, sol = mc_knapsack(args.budget, runtime, values, classes)
         if sol:
