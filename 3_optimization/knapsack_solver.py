@@ -8,7 +8,7 @@ def knapsack(capacity, weights, values):
             if i == 0 or j == 0:
                 K[i][j] = 0
             elif weights[i-1] <= j:
-                K[i][j] = max(K[i-1][j], values[i-1] + K[i-1][j-weights[i-1]])
+                K[i][j] = min(K[i-1][j], values[i-1] + K[i-1][j-weights[i-1]])
             else:
                 K[i][j] = K[i-1][j]
     total_value = K[-1][-1]
@@ -26,7 +26,7 @@ def knapsack(capacity, weights, values):
 
 
 def mc_knapsack(capacity, weights, values, classes):
-    KC = [[float('-inf') for j in range(1 + capacity)] for i in range(len(set(classes)) + 1)]
+    KC = [[float('inf') for j in range(1 + capacity)] for i in range(len(set(classes)) + 1)]
 
     items = list(zip(classes, weights, values))
     w = []
@@ -35,13 +35,13 @@ def mc_knapsack(capacity, weights, values, classes):
         w.append(list(list(zip(*list(filter(lambda x: x[0] == i, items))))[1]))
         p.append(list(list(zip(*list(filter(lambda x: x[0] == i, items))))[2]))
 
-    selected = [[float('-inf') for j in range(1 + capacity)] for i in range(len(set(classes)) + 1)]
+    selected = [[float('inf') for j in range(1 + capacity)] for i in range(len(set(classes)) + 1)]
     for i in range(len(set(classes)) + 1):
         for j in range(capacity + 1):
             if i == 0:
                 KC[i][j] = 0
             elif j == 0:
-                KC[i][j] = float('-inf')
+                KC[i][j] = float('inf')
             else:
                 choose_from = []
                 indices = []
@@ -50,13 +50,13 @@ def mc_knapsack(capacity, weights, values, classes):
                         choose_from.append(KC[i-1][j-w[i-1][k]] + p[i-1][k])
                         indices.append(k)
                 if choose_from:
-                    KC[i][j] = max(choose_from)
-                    selected[i][j] = indices[choose_from.index(max(choose_from))]
+                    KC[i][j] = min(choose_from)
+                    selected[i][j] = indices[choose_from.index(min(choose_from))]
                 
     total_value = KC[-1][-1]
 
     # if no solution exists
-    if total_value == float('-inf'):
+    if total_value == float('inf'):
         return None, None
     
     elements = {}
