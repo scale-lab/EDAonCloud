@@ -9,7 +9,7 @@ authors:
 title: "Characterizing and Optimizing EDA Flows for the Cloud"
 version: 1.0.0
 doi: 10.1109/TCAD.2021.3120534
-date-released: 2019-11-11
+date-released: 2021-2-22
 url: "https://github.com/scale-lab/EDAonCloud"
 preferred-citation:
   type: article
