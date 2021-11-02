@@ -6,7 +6,7 @@ Design space exploration in logic synthesis and parameter tuning in physical des
 
 ## Paper
 
-Presented at [DATE 2021](https://www.date-conference.com/) as Interactive Presentation. Download preprint from [arXiv](http://arxiv.org/abs/2102.10800). Access full paper from IEEE Xplore from [TCAD Journal](https://ieeexplore.ieee.org/document/9576518)
+Presented at [DATE 2021](https://ieeexplore.ieee.org/document/9473977) as Interactive Presentation. Download preprint from [arXiv](http://arxiv.org/abs/2102.10800). Access full paper from IEEE Xplore from [TCAD Journal](https://ieeexplore.ieee.org/document/9576518)
 
 ## Structure
 
